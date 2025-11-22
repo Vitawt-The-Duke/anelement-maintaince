@@ -1,0 +1,10 @@
+name = "anelement-maintenance"
+main = "src/worker.js"
+compatibility_date = "2025-11-22"
+
+assets = { directory = "public", binding = "ASSETS" }
+
+# You can add a custom route later in dashboard or here:
+# routes = [
+#   { pattern = "anelement.eu/*", zone_name = "anelement.eu" }
+# ]

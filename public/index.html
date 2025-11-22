@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>An Element — Coming Soon</title>
+
+  <style>
+    :root{
+      /* matched to your jpeg */
+      --bg: #3f3f3f;              /* dark neutral gray */
+      --card: rgba(255,255,255,0.06);
+      --card-border: rgba(255,255,255,0.14);
+      --text: #f5f5f7;
+      --muted: rgba(245,245,247,0.78);
+      --accent: #d6ea22;          /* neon yellow-green from logo */
+      --accent-soft: rgba(214,234,34,0.12);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(1100px circle at 10% 10%, #4a4a4a, transparent 42%),
+        radial-gradient(900px circle at 90% 20%, #474747, transparent 48%),
+        radial-gradient(800px circle at 50% 90%, #3a3a3a, transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      line-height:1.5;
+    }
+
+    .wrap{
+      width:min(940px, 92vw);
+      padding: clamp(18px, 3vw, 28px);
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: clamp(20px, 4vw, 40px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo-img{
+      height:54px;
+      width:auto;
+      display:block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+    }
+
+    .badge{
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--card-border);
+      color:var(--muted);
+    }
+
+    h1{
+      font-size: clamp(30px, 5vw, 54px);
+      margin: 0 0 8px 0;
+      font-weight: 800;
+    }
+    h1 .accent{ color: var(--accent); }
+
+    p.lead{
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: var(--muted);
+      margin: 0 0 18px 0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(14px, 2.5vw, 22px);
+      margin-top:18px;
+    }
+    @media (max-width: 760px){
+      .grid{ grid-template-columns: 1fr; }
+      header{ flex-direction:column; align-items:flex-start; }
+      .logo-img{ height:46px; }
+    }
+
+    .panel{
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+    .panel h2{
+      margin:0 0 10px 0;
+      font-size: 16px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .contact{
+      display:grid;
+      gap:10px;
+      font-size:16px;
+    }
+    .contact a{
+      color: var(--text);
+      text-decoration:none;
+      border-bottom:1px dashed transparent;
+    }
+    .contact a:hover{
+      border-bottom-color: var(--accent);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+    .btn{
+      appearance:none;
+      border:1px solid var(--card-border);
+      background: transparent;
+      color: var(--text);
+      padding:10px 14px;
+      border-radius: 12px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition: transform .06s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    footer{
+      margin-top:16px;
+      color: var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header>
+        <div class="brand">
+          <!-- your JPEG logo -->
+          <img class="logo-img" src="/logo.jpg" alt="An Element logo">
+        </div>
+        <div class="badge">Coming soon</div>
+      </header>
+
+      <h1>We’re building something <span class="accent">new</span>.</h1>
+      <p class="lead">
+        Our store is under construction. We’re polishing the catalog and logistics,
+        and will open shortly.
+      </p>
+
+      <div class="grid">
+        <div class="panel">
+          <h2>Status</h2>
+          <p>
+            The website is temporarily unavailable while we prepare the launch.
+            Thank you for your patience.
+          </p>
+          <div class="cta">
+            <a class="btn" href="mailto:an.element.uk@gmail.com">Email us</a>
+            <a class="btn" href="tel:+48729488641">Call us</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Contact</h2>
+          <div class="contact">
+            <div>
+              Email:
+              <a href="mailto:an.element.uk@gmail.com">an.element.uk@gmail.com</a>
+            </div>
+            <div>
+              Phone:
+              <a href="tel:+48729488641">+48 729 488 641</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>© <span id="y"></span> An Element. All rights reserved.</div>
+        <div>EU-wide shipping after launch.</div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
